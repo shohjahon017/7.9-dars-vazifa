@@ -118,7 +118,7 @@ import { Link, useLocation, Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import StarsBackground from "../components/StarsBackground";
 import Footer from "./Footer";
-import ScrollToTop from "../components/scrollToTop";
+import ScrollToTop from "../components/ScrollToTop";
 
 function MainLayout({}) {
   const { pathname } = useLocation();
@@ -139,7 +139,6 @@ function MainLayout({}) {
     <>
       <StarsBackground />
 
-      {/* HEADER */}
       <header className="fixed top-0 w-full z-50 backdrop-blur bg-white/70 dark:bg-gray-900/70 border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           {/* LOGO */}
