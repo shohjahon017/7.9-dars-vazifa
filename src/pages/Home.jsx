@@ -254,6 +254,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import CoursesSlider from "../components/CoursesSlider";
+import { useSearchParams } from "react-router-dom";
 
 /* ================= ANIMATIONS ================= */
 const fadeUp = {
@@ -315,7 +316,8 @@ async function sendToTelegram(name, phone, course) {
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-
+  const [params] = useSearchParams();
+  const selectedCourse = params.get("course");
   return (
     <div className="text-white">
       {/* ================= HERO ================= */}
@@ -516,7 +518,8 @@ export default function Home() {
             <select
               name="course"
               required
-              className="w-full px-4 py-3 rounded bg-gray-900 outline-none"
+              defaultValue={selectedCourse || ""}
+              className="w-full px-4 py-3 rounded bg-gray-800 text-white outline-none"
             >
               <option value="">Kursni tanlang</option>
               <option value="IT">IT</option>
