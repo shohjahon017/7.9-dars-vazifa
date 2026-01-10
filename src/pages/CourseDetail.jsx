@@ -129,6 +129,53 @@ export default function CourseDetail() {
           </ul>
         </motion.div>
       </div>
+      {/* TIMELINE */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        className="mt-24"
+      >
+        <h2 className="text-3xl font-bold text-center mb-14">
+          📈 O‘qish jarayoni
+        </h2>
+
+        <div className="relative max-w-4xl mx-auto">
+          <div className="absolute left-1/2 top-0 h-full w-1 bg-white/20 -translate-x-1/2"></div>
+
+          {[
+            {
+              title: "Boshlang‘ich daraja",
+              desc: "Asosiy tushunchalar va bilimlarni mustahkamlash",
+            },
+            {
+              title: "Amaliy mashg‘ulotlar",
+              desc: "Testlar, misollar va real topshiriqlar",
+            },
+            {
+              title: "Nazorat va tahlil",
+              desc: "Xatolar ustida ishlash va feedback",
+            },
+            {
+              title: "Yakuniy natija",
+              desc: course.result,
+            },
+          ].map((step, i) => (
+            <div
+              key={i}
+              className={`relative mb-14 flex ${
+                i % 2 === 0 ? "justify-start" : "justify-end"
+              }`}
+            >
+              <div className="w-5 h-5 bg-purple-500 rounded-full absolute left-1/2 -translate-x-1/2 top-2"></div>
+
+              <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 w-[45%]">
+                <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
+                <p className="text-white/70 text-sm">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
 
       {/* CTA */}
       <motion.div

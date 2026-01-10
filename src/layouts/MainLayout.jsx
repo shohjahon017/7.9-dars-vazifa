@@ -114,17 +114,49 @@
 // }
 
 // export default MainLayout;
+{
+  /* 
+              {dropdown && (
+                <div className="absolute top-8 left-0 w-44 rounded-xl bg-white dark:bg-gray-800 shadow-xl overflow-hidden">
+                  {[
+                    "IELTS",
+                    "Ona tili",
+                    "Arab tili",
+                    "Kimyo",
+                    "Ingliz tili",
+                    "Matematika",
+                  ].map((item, i) => (
+                    <Link
+                      key={i}
+                      to={`/courses/${item.toLowerCase().replace(" ", "")}`}
+                      className="block px-4 py-3 hover:bg-blue-50 dark:hover:bg-gray-700 transition"
+                    >
+                      {item}
+                    </Link>
+                  ))}
+                </div>
+              )} */
+}
 import { Link, useLocation, Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
-import StarsBackground from "../components/StarsBackground";
+
 import Footer from "./Footer";
 import ScrollToTop from "../components/ScrollToTop";
+import StarsBackground from "../components/StarsBackground";
 
 function MainLayout({}) {
   const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [dark, setDark] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const menuCourses = [
+    { title: "IELTS", slug: "ielts" },
+    { title: "Ona tili", slug: "ona-tili" },
+    { title: "Arab tili", slug: "arab-tili" },
+    { title: "Kimyo", slug: "kimyo" },
+    { title: "Ingliz tili", slug: "ingliz-tili" },
+    { title: "Matematika", slug: "matematika" },
+  ];
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
@@ -162,20 +194,20 @@ function MainLayout({}) {
               onMouseEnter={() => setDropdown(true)}
               onMouseLeave={() => setDropdown(false)}
             >
-              <button className="flex items-center gap-1 hover:text-blue-500">
+              <button className="flex items-center gap-1 hover:text-blue-500 min-h-[48px] text-base">
                 Kurslar
                 <span className="text-sm">▾</span>
               </button>
 
               {dropdown && (
-                <div className="absolute top-8 left-0 w-44 rounded-xl bg-white dark:bg-gray-800 shadow-xl overflow-hidden">
-                  {["IT", "Ingliz tili", "Matematika"].map((item, i) => (
+                <div className="absolute top-10 -left-6 w-34 rounded-xl bg-white dark:bg-gray-800 shadow-xl overflow-hidden">
+                  {menuCourses.map((item, i) => (
                     <Link
                       key={i}
-                      to={`/courses/${item.toLowerCase().replace(" ", "")}`}
+                      to={`/courses/${item.slug}`}
                       className="block px-4 py-3 hover:bg-blue-50 dark:hover:bg-gray-700 transition"
                     >
-                      {item}
+                      {item.title}
                     </Link>
                   ))}
                 </div>
@@ -208,7 +240,7 @@ function MainLayout({}) {
           </nav>
 
           <button
-            className="md:hidden text-2xl"
+            className="md:hidden text-2xl "
             onClick={() => setMenuOpen(!menuOpen)}
           >
             ☰
@@ -237,6 +269,7 @@ function MainLayout({}) {
       <main className="pt-20 min-h-screen ">
         <Outlet />
         <Footer />
+        <StarsBackground />
         <ScrollToTop />
       </main>
     </>

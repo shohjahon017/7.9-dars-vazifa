@@ -522,10 +522,12 @@ export default function Home() {
               className="w-full px-4 py-3 rounded bg-gray-800 text-white outline-none"
             >
               <option value="">Kursni tanlang</option>
-              <option value="IT">IT</option>
+              <option value="IELTS">IELTS</option>
               <option value="Ingliz tili">Ingliz tili</option>
               <option value="Matematika">Matematika</option>
-              <option value="IELTS">IELTS</option>
+              <option value="arab-tili">Arab tili</option>
+              <option value="ona-tili">Ona tili</option>
+              <option value="Kimyo">Kimyo</option>
             </select>
 
             <button
