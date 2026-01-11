@@ -64,6 +64,7 @@ import Home from "./pages/Home";
 import Teachers from "./pages/Teachers";
 import TeacherDetail from "./pages/TeacherDetail";
 import CourseDetail from "./pages/CourseDetail";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -75,7 +76,7 @@ function App() {
         {/* TEACHERS */}
         <Route path="/teachers" element={<Teachers />} />
         <Route path="/teachers/:slug" element={<TeacherDetail />} />
-
+        <Route path="/about" element={<About />} />
         <Route path="/contact" element={<h1>Aloqa</h1>} />
       </Route>
     </Routes>

@@ -87,5 +87,7 @@ export default function StarsBackground() {
     animate();
   }, []);
 
-  return <canvas id="stars" className="fixed inset-0 -z-10" />;
+  return (
+    <canvas id="stars" className="fixed inset-0 -z-10   pointer-events-none" />
+  );
 }

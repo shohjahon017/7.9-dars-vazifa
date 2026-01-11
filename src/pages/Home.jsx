@@ -440,7 +440,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             ["O‘quvchi", 500],
-            ["Mentor", 15],
+            ["Mentor", 10],
             ["Kurs", 10],
             ["Natija %", 95],
           ].map((item, i) => (
@@ -523,7 +523,6 @@ export default function Home() {
             >
               <option value="">Kursni tanlang</option>
               <option value="IELTS">IELTS</option>
-              <option value="Ingliz tili">Ingliz tili</option>
               <option value="Matematika">Matematika</option>
               <option value="arab-tili">Arab tili</option>
               <option value="ona-tili">Ona tili</option>
