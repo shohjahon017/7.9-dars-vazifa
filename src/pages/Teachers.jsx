@@ -28,7 +28,7 @@ import teachers from "../data/teachers";
 
 export default function Teachers() {
   return (
-    <div className="relative text-white min-h-screen overflow-hidden">
+    <div className="relative text-white min-h-screen overflow-hidden -top-4">
       {/* STAR BACKGROUND */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#1e3a8a,_#020617)]" />
       <div className="absolute inset-0 bg-[url('/stars.png')] opacity-30 animate-pulse" />

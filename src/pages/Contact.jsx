@@ -149,7 +149,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative min-h-screen text-white">
+    <div className="relative min-h-screen text-white -top-4">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#1e3a8a,_#020617)]" />
 
       <div className="relative max-w-6xl mx-auto px-6 py-32">
