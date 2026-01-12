@@ -433,6 +433,7 @@ function MainLayout() {
   const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
 
   const menuCourses = [
     { title: "IELTS", slug: "ielts" },
@@ -440,6 +441,8 @@ function MainLayout() {
     { title: "Arab tili", slug: "arab-tili" },
     { title: "Kimyo", slug: "kimyo" },
     { title: "Matematika", slug: "matematika" },
+    { title: "Tarix", slug: "tarix" },
+    { title: "Huquq", slug: "huquq" },
   ];
 
   const linkClass = (path) =>
@@ -470,8 +473,7 @@ function MainLayout() {
               Home
             </Link>
 
-            {/* DROPDOWN */}
-            {/* DROPDOWN */}
+            {/* KURSLAR */}
             <div
               className="relative"
               onMouseEnter={() => setDropdown(true)}
@@ -479,33 +481,38 @@ function MainLayout() {
             >
               <button
                 type="button"
-                className="flex items-center gap-1 text-base hover:text-blue-500 min-h-[48px]"
+                onClick={() => setDropdown(!dropdown)}
+                className="
+      flex items-center gap-1
+      min-h-[48px]
+      text-base font-medium
+      hover:text-blue-500
+    "
               >
                 Kurslar
                 <span className="text-sm">▾</span>
               </button>
 
+              {/* DROPDOWN */}
               {dropdown && (
                 <div
-                  className="
-        absolute top-full left-0 mt-2
-        w-44 rounded-xl
-        bg-white dark:bg-gray-800
-        shadow-2xl
-        border border-white/20
-        z-[9999]
-      "
+                  className="absolute top-10 -left-8   w-38 rounded-2xl
+    bg-[#0B0F2B]/95 backdrop-blur-xl
+    border border-white/10 shadow-2xl overflow-hidden z-50"
                 >
                   {menuCourses.map((item) => (
                     <Link
                       key={item.slug}
                       to={`/courses/${item.slug}`}
-                      className="
-            block px-4 py-3
-            text-gray-800 dark:text-white
-            hover:bg-blue-50 dark:hover:bg-gray-700
-            transition
-          "
+                      onClick={() => setDropdown(false)}
+                      className={`
+          block px-4 py-3 transition
+          ${
+            pathname === `/courses/${item.slug}`
+              ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl mx-2 my-1"
+              : "text-white/80 hover:bg-white/10"
+          }
+        `}
                     >
                       {item.title}
                     </Link>
@@ -543,51 +550,60 @@ function MainLayout() {
 
         {/* MOBILE MENU */}
         {menuOpen && (
-          <div className="md:hidden bg-black/90 backdrop-blur border-t border-white/10">
-            <nav className="flex flex-col p-6 text-white">
-              {/* HOME */}
+          <div className="md:hidden bg-gradient-to-br from-[#0B0F2B] via-[#0F1C4D] to-[#2B0F44] border-t border-white/10">
+            <nav className="flex flex-col gap-4 p-6 text-white text-lg">
               <Link
                 to="/"
                 onClick={() => setMenuOpen(false)}
-                className="text-xl font-semibold py-3"
+                className="font-semibold hover:text-blue-400 transition"
               >
                 Home
               </Link>
 
-              {/* KURSLAR (DESKTOP KABI) */}
-              <div className="py-3">
-                <button
-                  onClick={() => setDropdown(!dropdown)}
-                  className="flex items-center justify-between w-full text-xl font-semibold"
+              {/* MOBILE KURSLAR */}
+              <button
+                onClick={() => setMobileCoursesOpen(!mobileCoursesOpen)}
+                className="flex items-center justify-between font-semibold"
+              >
+                Kurslar
+                <span
+                  className={`transition ${
+                    mobileCoursesOpen ? "rotate-180" : ""
+                  }`}
                 >
-                  Kurslar
-                  <span>{dropdown ? "▴" : "▾"}</span>
-                </button>
+                  ▾
+                </span>
+              </button>
 
-                {dropdown && (
-                  <div className="mt-3 ml-4 flex flex-col gap-2 text-lg text-white/80">
-                    {menuCourses.map((c) => (
-                      <Link
-                        key={c.slug}
-                        to={`/courses/${c.slug}`}
-                        onClick={() => {
-                          setMenuOpen(false);
-                          setDropdown(false);
-                        }}
-                        className="hover:text-blue-400 transition"
-                      >
-                        {c.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              {mobileCoursesOpen && (
+                <div className="ml-4 flex flex-col gap-2">
+                  {menuCourses.map((item) => (
+                    <Link
+                      key={item.slug}
+                      to={`/courses/${item.slug}`}
+                      onClick={() => {
+                        setMenuOpen(false);
+                        setMobileCoursesOpen(false);
+                      }}
+                      className={`
+                px-3 py-2 rounded-xl transition
+                ${
+                  pathname === `/courses/${item.slug}`
+                    ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold"
+                    : "text-white/80 hover:bg-white/10"
+                }
+              `}
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
 
-              {/* PASTROQDA */}
               <Link
                 to="/teachers"
                 onClick={() => setMenuOpen(false)}
-                className="text-xl font-semibold py-3 mt-4 border-t border-white/10"
+                className="font-semibold hover:text-blue-400"
               >
                 O‘qituvchilar
               </Link>
@@ -595,7 +611,7 @@ function MainLayout() {
               <Link
                 to="/contact"
                 onClick={() => setMenuOpen(false)}
-                className="text-xl font-semibold py-3"
+                className="font-semibold hover:text-blue-400"
               >
                 Aloqa
               </Link>

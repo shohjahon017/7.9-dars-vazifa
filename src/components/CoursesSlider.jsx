@@ -183,7 +183,7 @@ const courses = [
     slug: "ielts",
     title: "IELTS",
     desc: "7+ ball uchun professional tayyorgarlik",
-    icon: "🎯",
+    icon: "🌍",
     color: "from-blue-500 to-purple-500",
   },
   {
@@ -213,6 +213,22 @@ const courses = [
     desc: "Boshlang‘ichdan mukammalgacha",
     icon: "🕌",
     color: "from-yellow-500 to-orange-500",
+  },
+
+  // 🔥 YANGI FANLAR
+  {
+    slug: "tarix",
+    title: "Tarix",
+    desc: "O‘zbekiston va Jahon tarixi",
+    icon: "🏛️",
+    color: "from-red-500 to-rose-500",
+  },
+  {
+    slug: "huquq",
+    title: "Huquq",
+    desc: "Konstitutsiya va huquq asoslari",
+    icon: "⚖️",
+    color: "from-slate-500 to-gray-700",
   },
 ];
 

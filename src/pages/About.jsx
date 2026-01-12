@@ -40,10 +40,20 @@ export default function About() {
 
           <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8">
             <ul className="space-y-4 text-lg">
-              <li>🚀 Kuchli mentorlar</li>
-              <li>📚 Sifatli dasturlar</li>
-              <li>🎓 Natijaga yo‘naltirilgan ta’lim</li>
-              <li>🌌 Ilhomlantiruvchi muhit</li>
+              <li className="flex items-center gap-1">
+                <img src="/rocket.png" alt="" /> Kuchli mentorlar
+              </li>
+              <li className="flex items-center gap-2">
+                <img className="w-6" src="/books.png" alt="" /> Sifatli
+                dasturlar
+              </li>
+              <li className="flex items-center gap-1">
+                <img src="/graduation.png" alt="" /> Natijaga yo‘naltirilgan
+                ta’lim
+              </li>
+              <li className="flex items-center gap-1">
+                🌌 Ilhomlantiruvchi muhit
+              </li>
             </ul>
           </div>
         </motion.div>

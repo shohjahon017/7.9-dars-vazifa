@@ -37,7 +37,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/courses/it" className="hover:text-white">
+              <Link to="/courses" className="hover:text-white">
                 Kurslar
               </Link>
             </li>
@@ -62,20 +62,34 @@ export default function Footer() {
         >
           <h4 className="font-semibold mb-4">Aloqa</h4>
           <ul className="space-y-3 text-white/70 text-sm">
-            <li>📍 Farg‘ona viloyati</li>
             <li>
-              📞{" "}
-              <a href="tel:+998901234567" className="hover:text-white">
-                +998 90 123 45 67
+              {" "}
+              <a
+                href="https://maps.app.goo.gl/87AMmQUGfa4LA5qN8"
+                className="flex gap-2 items-center"
+              >
+                <img className="w-5 h-5" src="/location.png" alt="" />
+                Farg`ona viloyati So`x tumani Soy bo`yida Mo`ljal: Sohil
+                To`yxonasi{" "}
               </a>
             </li>
             <li>
-              💬{" "}
+              <a
+                href="tel:+998901234567"
+                className="hover:text-white flex gap-2 items-center"
+              >
+                <img src="/phone.png" alt="" />
+                +998 90 123 45 67
+              </a>
+            </li>
+            <li className=" ">
               <a
                 href="https://t.me/USERNAME"
                 target="_blank"
-                className="hover:text-white"
+                className="hover:text-white flex gap-1 items-center"
               >
+                {" "}
+                <img className="w-5 h-5" src="/telegram.svg" alt="" />
                 Telegram
               </a>
             </li>

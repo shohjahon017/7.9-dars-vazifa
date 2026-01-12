@@ -64,7 +64,9 @@ import Home from "./pages/Home";
 import Teachers from "./pages/Teachers";
 import TeacherDetail from "./pages/TeacherDetail";
 import CourseDetail from "./pages/CourseDetail";
+import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Courses from "./pages/Courses";
 
 function App() {
   return (
@@ -72,12 +74,12 @@ function App() {
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/courses/:slug" element={<CourseDetail />} />
-
+        <Route path="/courses" element={<Courses />} />
         {/* TEACHERS */}
         <Route path="/teachers" element={<Teachers />} />
         <Route path="/teachers/:slug" element={<TeacherDetail />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<h1>Aloqa</h1>} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
   );

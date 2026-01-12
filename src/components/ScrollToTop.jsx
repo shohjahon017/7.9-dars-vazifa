@@ -90,7 +90,7 @@ export default function ScrollToTop() {
             hover:scale-110 transition
           "
         >
-          ⬆️
+          <img className="w-8" src="/up.png" alt="" />
         </motion.button>
       )}
     </AnimatePresence>

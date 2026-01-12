@@ -105,12 +105,24 @@ export default function CourseDetail() {
           whileInView={{ opacity: 1, x: 0 }}
           className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8"
         >
-          <h3 className="text-2xl font-bold mb-6">📌 Kurs haqida</h3>
+          <h3 className="text-2xl font-bold mb-6 flex items-center gap-2    ">
+            <img className="w-10" src="/pin.png" alt="" /> Kurs haqida
+          </h3>
           <ul className="space-y-3 text-white/80">
-            <li>⏳ Davomiyligi: {course.duration}</li>
-            <li>📚 Darslar: {course.lessons}</li>
-            <li>🎓 Natija: {course.result}</li>
-            <li>👥 Kimlar uchun: {course.forWho}</li>
+            <li className="flex items-center gap-2">
+              <img src="/time.png" alt="" /> Davomiyligi: {course.duration}
+            </li>
+            <li className="flex items-center gap-2">
+              <img className="w-6" src="/books.png" alt="" /> Darslar:{" "}
+              {course.lessons}
+            </li>
+            <li className="flex items-center gap-2">
+              <img src="/graduation.png" alt="" /> Natija: {course.result}
+            </li>
+            <li className="flex items-center gap-3">
+              <img className="w-6" src="/students.png    " alt="" /> Kimlar
+              uchun: {course.forWho}
+            </li>
           </ul>
         </motion.div>
 
