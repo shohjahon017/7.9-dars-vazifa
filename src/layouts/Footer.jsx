@@ -92,6 +92,17 @@ export default function Footer() {
                 <img className="w-5 h-5" src="/telegram.svg" alt="" />
                 Telegram
               </a>
+            </li>{" "}
+            <li className=" ">
+              <a
+                href="https://www.instagram.com/universe_study_center?igsh=MWlma2ltOWt6dHkwNg=="
+                target="_blank"
+                className="hover:text-white flex gap-1 items-center"
+              >
+                {" "}
+                <img className="w-5 h-5" src="/instagram.png" alt="" />
+                Instagram
+              </a>
             </li>
           </ul>
         </motion.div>
