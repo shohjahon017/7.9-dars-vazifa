@@ -530,13 +530,6 @@ function MainLayout() {
             <Link to="/contact" className={linkClass("/contact")}>
               Aloqa
             </Link>
-
-            <a
-              href="tel:+998901234567"
-              className="px-5 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 shadow hover:scale-105 transition"
-            >
-              Bepul dars
-            </a>
           </nav>
 
           {/* MOBILE BUTTON */}
@@ -615,6 +608,12 @@ function MainLayout() {
               >
                 Aloqa
               </Link>
+              <a
+                href="tel:+998901234567"
+                className="px-5 py-2 text-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 shadow hover:scale-105 transition"
+              >
+                Bepul dars
+              </a>
             </nav>
           </div>
         )}
